@@ -6,6 +6,7 @@
 
     $correo = $_POST['correo'];
     $contrasena = $_POST['contrasena'];
+    $contrasena = hash('sha512', $contrasena);
 
     $verificar_login = mysqli_query($conexion,"SELECT * FROM usuarios WHERE correo='$correo' 
     and contrasena = '$contrasena'");
